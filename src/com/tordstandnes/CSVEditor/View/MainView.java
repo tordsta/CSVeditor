@@ -18,11 +18,13 @@ public class MainView extends Frame {
         //Renders the views
         editView.render(mainFrame);
         fileView.render(mainFrame);
+        editView.render(mainFrame);
+        fileView.render(mainFrame);
 
         mainFrame.setTitle("Comma-separated values document editor");
         mainFrame.setLayout(new FlowLayout());
         mainFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        mainFrame.setUndecorated(true);
+//        mainFrame.setUndecorated(true);    //removes edge of window, with window buttons
         mainFrame.setVisible(true);
     }
 }

@@ -3,14 +3,14 @@ package com.tordstandnes.CSVEditor.View;
 import java.awt.*;
 
 public class CSVFileView{
+    private Panel panel;
+
 
     public CSVFileView(){
         System.out.println("CSVFileView init");
-    }
 
-    public void render(Frame mainFrame){
         //Create a open space in the frame
-        Panel panel = new Panel();
+         panel = new Panel();
         panel.setLayout(null);
         panel.setSize(75,75);
 
@@ -23,8 +23,11 @@ public class CSVFileView{
         l1.add("Item 4");
         l1.add("Item 5");
         panel.add(l1);
+    }
 
-        //adds to frame
+    public void render(Frame mainFrame){
+        //Renders or re-render panel on frame
+        System.out.println("ho");
         mainFrame.add(panel);
     }
 
