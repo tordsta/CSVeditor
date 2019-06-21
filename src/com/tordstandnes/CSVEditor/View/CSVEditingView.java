@@ -11,19 +11,55 @@ public class CSVEditingView {
 
         //Create a open space in the frame
         panel = new Panel();
-        panel.setLayout(null);
-        panel.setSize(200,50);
+//boxlayout er sikkert best her
+//      panel.setLayout(null);
+        panel.setSize(200,200);
 
         //Fills open space with content
-        Button button = new Button("button");
-        button.setSize(200, 50);
-        panel.add(button);
+
+        //Lode file button
+        Button lodeFileButton = new Button("Load File");
+        lodeFileButton.setSize(100, 30);
+        panel.add(lodeFileButton);
+
+        //Save file button
+        Button saveFileButton = new Button("Save File");
+        saveFileButton.setSize(100, 30);
+        panel.add(saveFileButton);
+
+        //Original separator selector
+        Label originalSeparatorLabel = new Label("Select the separator from the loaded file:");
+        TextField originalSeparator = new TextField("For example ; or ,");
+        originalSeparator.setSize(200, 15);
+        panel.add(originalSeparatorLabel);
+        panel.add(originalSeparator);
+
+        //Wanted separator selector
+        Label wantedSeparatorLabel = new Label("Select the separator you want in the final file:");
+        TextField wantedSeparator = new TextField("For example ; or ,");
+        wantedSeparator.setSize(200, 15);
+        panel.add(wantedSeparatorLabel);
+        panel.add(wantedSeparator);
+
+        //Swap x list...
+        Choice xList = new Choice();
+        xList.setSize(100, 50);
+        xList.add("X list");
+        panel.add(xList);
+
+        //...With Y list
+        Choice yList = new Choice();
+        yList.setSize(100, 50);
+        yList.add("Y list");
+        panel.add(yList);
     }
 
-    public void render(Frame mainFrame){
+
+    public void render(Frame mainFrame, GridBagConstraints constraints){
         //Renders or re-render panel on frame
-        System.out.println("hey");
-        mainFrame.add(panel);
+        constraints.gridx = 0;
+        constraints.gridy = 1;
+        mainFrame.add(panel, constraints);
     }
 
 }
